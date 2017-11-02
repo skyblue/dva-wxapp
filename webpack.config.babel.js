@@ -72,7 +72,7 @@ export default {
 						}
 					},
 					{
-						loader: 'sass-loader',
+						loader: 'less-loader',
 						options: {
 							includePaths: [
 								resolve('src', 'styles'),
@@ -94,7 +94,7 @@ export default {
             }
           },
           {
-            loader: 'sass-loader',
+            loader: 'less-loader',
             options: {
               includePaths: [
                 resolve('src'),

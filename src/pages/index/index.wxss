@@ -2,6 +2,10 @@
 .indexTitle {
   background-color: red;
   margin-top: 20rpx;
+
+  .value {
+      background-color: yellow;
+  }
 }
 
 .indexButton {

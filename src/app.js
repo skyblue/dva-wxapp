@@ -1,5 +1,5 @@
 import * as core from 'dva-core';
-import createLogger from 'redux-logger';
+import { createLogger } from 'redux-logger';
 import createLoading from 'dva-loading';
 import models from './models/models.js';
 
@@ -38,7 +38,7 @@ const config = {
 
   onLaunch() {
     dvapp._store.dispatch({ type: 'app/init' });
-  },
+  }
 };
 
 App(config);

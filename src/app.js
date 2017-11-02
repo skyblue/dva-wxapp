@@ -1,46 +1,46 @@
-import * as core from 'dva-core';
-import { createLogger } from 'redux-logger';
-import createLoading from 'dva-loading';
-import models from './models/models.js';
+import * as core from 'dva-core'
+import { createLogger } from 'redux-logger'
+import createLoading from 'dva-loading'
+import models from './models'
 
 //创建app
 const dvapp = core.create({
   initialReducer: {}
-},{
-  setupMiddlewares(middlewares) {
+}, {
+  setupMiddlewares (middlewares) {
     return [
       ...middlewares,
       createLogger({
         //dva-loading的log太多了，忽略掉
         //直接从logger的state中查看loading状态即可
-        predicate: (getState, action) => (action.type !== '@@DVA_LOADING/HIDE' && action.type!=='@@DVA_LOADING/SHOW'),
+        predicate: (getState, action) => (action.type !== '@@DVA_LOADING/HIDE' && action.type !== '@@DVA_LOADING/SHOW'),
         duration: true,
         collapsed: true,
         timestamp: true,
       }),
-    ];
+    ]
   }
-});
+})
 
 //加载model
 models.forEach(model => {
-  dvapp.model(model);
-});
+  dvapp.model(model)
+})
 
-dvapp.use(createLoading({ effects: true }));
+dvapp.use(createLoading({effects: true}))
 
 //启动app
-dvapp.start();
+dvapp.start()
 
 //初始化App()
 const config = {
   ...dvapp,
 
-  onLaunch() {
-    dvapp._store.dispatch({ type: 'app/init' });
+  onLaunch () {
+    dvapp._store.dispatch({type: 'app/init'})
   }
-};
+}
 
-App(config);
+App(config)
 
 

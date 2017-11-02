@@ -1,4 +1,3 @@
-
 export default {
   data: {
     carousel: {
@@ -11,9 +10,9 @@ export default {
     },
   },
 
-  onTapCarouselItem() {
-    throw new Error('should override this function');
+  onTapCarouselItem () {
+    throw new Error('should override this function')
   }
 
-};
+}
 

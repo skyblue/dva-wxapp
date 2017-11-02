@@ -21,7 +21,7 @@
     "globals": {
         "__DEV__": true,
         "App": true,
-        "Page": true,
+        "Page": true
     },
     "settings": {
         "import/resolver": {
@@ -79,6 +79,6 @@
         "global-require": 0,
         "no-unused-expressions": ["error", { "allowShortCircuit": true }],
         "linebreak-style": [0, "windows"],
-        "no-console": 0,
+        "no-console": 0
     }
 }

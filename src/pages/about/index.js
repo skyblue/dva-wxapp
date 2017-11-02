@@ -1,6 +1,5 @@
-import connect from '../../utils/connect.js';
-import wx from '../../utils/wx.js';
+import { connect } from '../../utils'
 
-const page = {};
+const page = {}
 
-Page(connect()(page));
+Page(connect()(page))
